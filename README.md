@@ -41,34 +41,35 @@ email-writer/
 │   └── package.json
 └── README.md
 ```
+---
+## Request Body
+POST /api/email/generate<br>
+{ <br>
+  "emailContent": "Hi, I saw your resume and wanted to follow up on the position..."<br>
+  "tone": "formal",<br>
+}
 
-Request Body
--POST /api/email/generate
--{
- - "emailContent": "Hi, I saw your resume and wanted to follow up on the position..."
-  -"tone": "formal",
--}
 
-⚙️ Configuration
--1. Set your Gemini API Key
--In application.properties (Spring Boot)
+### ⚙️ Configuration
+1. Set your Gemini API Key
+In application.properties (Spring Boot)
 
--gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
--gemini.api.key=YOUR_GEMINI_API_KEY
--server.port=8000
+gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent<br>
+gemini.api.key=YOUR_GEMINI_API_KEY<br>
+server.port=8000
 
-🔧 Run Locally
-Backend
-cd email-writer-sp
+### 🔧 Run Locally
+**Backend** <br>
+cd email-writer-sp <br>
 ./mvnw spring-boot:run
 
-Frontend
-cd email-writer-frontend
-npm install
+**Frontend** <br>
+cd email-writer-frontend<br>
+npm install<br>
 npm start
 
-
-✅ Future Enhancements
+---
+### ✅ Future Enhancements
 🌐 Language translation support
 
 📁 Save email history per user
@@ -76,3 +77,4 @@ npm start
 🛡️ Add authentication (JWT/Session)
 
 🧾 Download generated emails as .txt or .pdf
+
